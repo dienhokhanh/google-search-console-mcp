@@ -1,0 +1,82 @@
+{
+  "name": "google-search-console-mcp",
+  "version": "0.1.0",
+  "description": "A secure Model Context Protocol server for Google Search Console.",
+  "type": "module",
+  "bin": {
+    "google-search-console-mcp": "dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsx src/cli.ts",
+    "start": "node dist/cli.js",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "package:check": "node scripts/check-package.mjs",
+    "check": "npm run format:check && npm run lint && npm run typecheck && npm run test && npm run build && npm run package:check",
+    "prepack": "npm run build && npm run package:check",
+    "sync-version": "node scripts/sync-version.mjs"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "google-search-console",
+    "search-console",
+    "seo",
+    "claude-code"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.14.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "^2.1.0",
+    "google-auth-library": "^11.1.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@modelcontextprotocol/client": "^2.1.0",
+    "@types/node": "^24.10.0",
+    "@vitest/coverage-v8": "^5.0.2",
+    "eslint": "^10.11.0",
+    "prettier": "^3.6.2",
+    "tsup": "^8.5.1",
+    "tsx": "^4.20.6",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.70.1",
+    "vitest": "^5.0.2"
+  },
+  "author": "Dien Ho",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dienhokhanh/google-search-console-mcp.git"
+  },
+  "homepage": "https://github.com/dienhokhanh/google-search-console-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/dienhokhanh/google-search-console-mcp/issues"
+  },
+  "mcpName": "io.github.dienhokhanh/google-search-console-mcp",
+  "overrides": {
+    "esbuild": "0.28.2"
+  }
+}

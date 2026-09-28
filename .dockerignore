@@ -1,0 +1,13 @@
+.git
+.github
+.patch-backup
+coverage
+dist
+docs
+examples
+node_modules
+tests
+*.log
+credentials*.json
+service-account*.json
+token*.json

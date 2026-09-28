@@ -1,0 +1,9 @@
+services:
+  google-search-console-mcp:
+    image: ghcr.io/dienhokhanh/google-search-console-mcp:latest
+    stdin_open: true
+    environment:
+      GSC_CREDENTIALS_FILE: /run/secrets/google-credentials.json
+      GSC_ALLOWED_SITES: sc-domain:example.com
+    volumes:
+      - ./service-account.json:/run/secrets/google-credentials.json:ro

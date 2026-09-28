@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "google-search-console": {
+      "command": "npx",
+      "args": ["-y", "google-search-console-mcp"],
+      "env": {
+        "GSC_CREDENTIALS_FILE": "${GSC_CREDENTIALS_FILE}",
+        "GSC_ALLOWED_SITES": "${GSC_ALLOWED_SITES:-}"
+      }
+    }
+  }
+}
